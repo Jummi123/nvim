@@ -125,6 +125,16 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { 'lua', 'c', 'cpp' },
+  callback = function()
+    vim.opt_local.tabstop = 2
+    vim.opt_local.shiftwidth = 2
+    vim.opt_local.expandtab = true
+    vim.opt_local.softtabstop = 2
+  end,
+})
+
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
@@ -860,8 +870,8 @@ require('lazy').setup({
       -- Better Around/Inside textobjects
       --
       -- Examples:
-      --  - va)  - [V]isually select [A]round [)]paren
-      --  - yinq - [Y]ank [I]nside [N]ext [Q]uote
+      --  - a)  - [V]isually select [A]round [)]paren
+      --  - yinq - [Y]ank [I]nside [N]ext [Q]uot
       --  - ci'  - [C]hange [I]nside [']quote
       require('mini.ai').setup { n_lines = 500 }
 
@@ -873,7 +883,7 @@ require('lazy').setup({
       require('mini.surround').setup()
 
       -- Simple and easy statusline.
-      --  You could remove this setup call if you don't like it,
+      --  You could remoe this "setup" call if you don't like it,
       --  and try some other statusline plugin
       local statusline = require 'mini.statusline'
       -- set use_icons to true if you have a Nerd Font
