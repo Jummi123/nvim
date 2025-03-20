@@ -23,7 +23,7 @@ pkg install which
 pkg install wget
 ```
 ### Download script
-If you just want to install clangd, lua-language-server, stylua, ect...
+If you just want to install clangd, lua-language-server, stylua, etc...  
 Then you can just use this script without cloning whole repo. 
 ```
 wget https://raw.githubusercontent.com/Jummi123/nvim/refs/heads/master/pkg-install-mason
