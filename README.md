@@ -8,7 +8,17 @@ BASH script allows you to manually install packages for mason.
 ```
 pkg install neovim
 ```
-## How to
+Clone repository to ~/.config/nvim
+```
+git clone https://github.com/Jummi123/nvim.git ~/.config/nvim
+```
+You can check if you have everything you need by using
+```
+:checkhealt
+```
+in neovim.
+# Installing pakcages to mason
+Mason cannot install language servers for termux so we have to do it manually.
 ```
 pkg install which
 ```
