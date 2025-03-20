@@ -6,11 +6,13 @@ BASH script allows you to manually install packages for mason.
 ```
 pkg install which
 ```
-Download script 
+# Download script
+
+# Make executable
 ```
 chmod +x pkg-install-mason
 ```
-# Clangd for example
+# Install Clangd for example
 ```
 ./pkg-install-mason clangd
 ```
