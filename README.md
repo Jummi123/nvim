@@ -17,12 +17,18 @@ You can check if you have everything you need by using
 :checkhealt
 ```
 in neovim.
-# Installing pakcages to mason
+# Installing language servers manually
 Mason cannot install language servers for termux so we have to do it manually.
 ```
 pkg install which
+pkg install wget
 ```
 # Download script
+If you just want to install clangd, lua-language-server, stylua, ect...
+Then you can just use this script without cloning whole repo. 
+```
+wget https://raw.githubusercontent.com/Jummi123/nvim/refs/heads/master/pkg-install-mason
+```
 
 # Make executable
 ```
