@@ -1,7 +1,7 @@
 Readme for kickstart https://github.com/nvim-lua/kickstart.nvim  
 It has quite comprehensive documentation. You can use that if you get stuck.
 
-# Using kickstart in termux
+# Using neovim in termux
 
 ### Install neovim
 ```
