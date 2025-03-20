@@ -1,8 +1,7 @@
-readme for kickstart https://github.com/nvim-lua/kickstart.nvim
+Readme for kickstart https://github.com/nvim-lua/kickstart.nvim
+It has quite comprehensive documentation. You can use that if you get stuck.
 
 ### Using kickstart in termux
-
-BASH script allows you to manually install packages for mason.
 
 # Install neovim
 ```
