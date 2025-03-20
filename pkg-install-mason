@@ -20,7 +20,7 @@ setup_package_for_mason() {
     echo "Failed to install $PACKAGE_NAME."
     return 1
   fi
-  
+
   PACKAGE_NAME=$1
   if [ "$PACKAGE_NAME" = "clang" ]; then
     PACKAGE_NAME=clangd
