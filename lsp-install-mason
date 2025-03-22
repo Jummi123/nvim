@@ -2,6 +2,7 @@
 
 pkg install which
 pkg install nodejs
+pkg install stylua
 
 # Check for arguments
 if [ -z "$1"  ]; then 
@@ -13,9 +14,20 @@ SERVER_NAME="$1"
 
 echo "Checking if ${SERVER_NAME} is installed..."
 
+if [ $SERVER_NAME = asm-lsp ]; then 
+	echo "Installing $SERVER_NAME from rust cargo"
+	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+	pkg install asm-lsp
+fi
 if [ $SERVER_NAME = "clangd" ]; then
 	SERVER_NAME=$"clang"
 fi
+
+if [ $SERVER_NAME = "lua-language-server"]; then
+	echo "Installing $SERVER_NAME"
+	pkg install lua-languge-server
+fi
+
 if [ $SERVER_NAME = "bash-language-server" ]; then
 	npm install -g $SERVER_NAME
 fi
