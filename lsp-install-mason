@@ -25,7 +25,7 @@ fi
 
 if [ $SERVER_NAME = "lua-language-server" ]; then
 	echo "Installing $SERVER_NAME"
-	pkg install lua-languge-server
+	pkg install lua-language-server
 fi
 
 if [ $SERVER_NAME = "bash-language-server" ]; then
