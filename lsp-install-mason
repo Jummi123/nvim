@@ -1,8 +1,11 @@
 #!/bin/bash
 
 pkg update && pkg upgrade -y
+pkg install make
+pkg install python
+pkg install lua54
+pkg install ninja
 pkg install which
-pkg install stylua
 
 # Check for arguments
 if [ -z "$1"  ]; then 
@@ -13,7 +16,9 @@ fi
 SERVER_NAME="$1"
 
 echo "Checking if ${SERVER_NAME} is installed..."
-
+if [ $SERVER_NAME = stylua ]; then
+	pkg install stylua
+fi
 if [ $SERVER_NAME = asm-lsp ]; then 
 	echo "Installing $SERVER_NAME from rust cargo"
 	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
