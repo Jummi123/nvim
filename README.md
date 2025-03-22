@@ -38,6 +38,3 @@ chmod +x pkg-install-mason
 ./pkg-install-mason clangd
 ```
 
-Script is mostly from https://github.com/Amirulmuuminin/setup-mason-for-termux.
-I just added a way to automatically install clangd, since it’s not a standalone package in Termux.
-It comes with clang.
