@@ -1,11 +1,22 @@
 #!/bin/bash
 
+
 pkg update && pkg upgrade -y
-pkg install make
-pkg install python
-pkg install lua54
-pkg install ninja
-pkg install which
+if command -v which; then
+	pkg install which
+fi
+if which make; then
+	pkg install make
+fi
+if which python; then
+	pkg install python
+fi
+if which lua54; then
+	pkg install lua54
+fi
+if which ninja; then
+	pkg install ninja
+fi
 
 # Check for arguments
 if [ -z "$1"  ]; then 
