@@ -48,7 +48,6 @@ if [ -z "$IS_INSTALLED" ]; then
 		echo "Installing $SERVER_NAME from rust cargo..."
 		curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 		pkg install $SERVER_NAME -y
-		pkg install $SERVER_NAME
 	fi
 
 	if [ $SERVER_NAME = "bash-language-server" ]; then
