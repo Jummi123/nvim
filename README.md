@@ -4,15 +4,16 @@ It has quite comprehensive documentation. You can use that if you get stuck.
 # Using neovim in termux
 
 ### Install neovim
+get git first:)
 ```
 pkg install git
 ```
 ```
 pkg install neovim
 ```
-Clone repository to ~/.config
+Clone repository to ~/.config/nvim
 ```
-git clone https://github.com/Jummi123/nvim.git ~/.config
+git clone https://github.com/Jummi123/nvim.git ~/.config/nvim
 cd ~/.config/nvim
 ```
 Now run autoInstall if you are using my clone.
