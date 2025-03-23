@@ -1,6 +1,7 @@
 Readme for kickstart https://github.com/nvim-lua/kickstart.nvim  
 It has quite comprehensive documentation. You can use that if you get stuck.
 
+Script that is used here also installs: which, make, python, lua, ninja, rustup (so we can isntall asm-lsp), nodejs (for bash-language-server), stylua, clang (includes clangd).
 # Using neovim in termux
 
 ### Install neovim
@@ -18,12 +19,13 @@ cd ~/.config/nvim
 ```
 Now run autoInstall if you are using my clone.
 ```
-chmod +x autoInstall
-./autoInstall
+chmod +x autoInstall.sh
+./autoInstall.sh
 ```
+start neovim and after it does its thing, close it and done.  
 It should now be working:)
 ### Installing language servers manually
-Mason cannot install all language servers for termux so we have to do it manually.
+Mason cannot install all language servers for termux so we have to do it manually.  
 ```
 pkg install wget
 ```
