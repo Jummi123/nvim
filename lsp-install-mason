@@ -47,11 +47,8 @@ if [ -z "$IS_INSTALLED" ]; then
 	if [ $SERVER_NAME = asm-lsp ]; then 
 		echo "Installing $SERVER_NAME from rust cargo..."
 		curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-<<<<<<< HEAD
 		pkg install $SERVER_NAME -y
-=======
 		pkg install $SERVER_NAME
->>>>>>> 082f4f8ffe19c0351f82a1359e7444cb4f9a2f35
 	fi
 
 	if [ $SERVER_NAME = "bash-language-server" ]; then
@@ -59,12 +56,9 @@ if [ -z "$IS_INSTALLED" ]; then
 		pkg install nodejs
 		npm install -g $SERVER_NAME
 	fi
-<<<<<<< HEAD
 
 	IS_INSTALLED=$(which "$SERVER_NAME")
 
-=======
->>>>>>> 082f4f8ffe19c0351f82a1359e7444cb4f9a2f35
 	if [ -z "$IS_INSTALLED" ]; then
 		echo "${SERVER_NAME} is not installed. "
 		echo "Installing $SERVER_NAME..."
@@ -77,12 +71,6 @@ fi
 if [ $SERVER_NAME = "clang" ]; then
 	SERVER_NAME=$"clangd"
 fi
-
-<<<<<<< HEAD
-=======
-
->>>>>>> 082f4f8ffe19c0351f82a1359e7444cb4f9a2f35
-SERVER_PATH=$(which "$SERVER_NAME")
 
 if [ -z "$SERVER_PATH" ]; then
 echo "Didn't find path to ${SERVER_NAME}."
