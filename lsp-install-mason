@@ -3,29 +3,35 @@
 
 pkg update && pkg upgrade -y
 if command -v which; then
-	echo installed
+	echo "installed"
 else
 	pkg install which
 fi
 if which make; then
-	echo installed
+	echo "installed"
 else
 	pkg install make
 fi
 if which python; then
-	echo installed
+	echo "installed"
 else
 	pkg install python
 fi
 if which lua; then
-	echo installed
+	echo "installed"
 else
 	pkg install lua54
 fi
 if which ninja; then
-	echo installed
+	echo "installed"
 else
 	pkg install ninja
+fi
+
+if which termux-api; then
+	echo "installed"
+else	
+	pkg install termux-api
 fi
 
 # Check for arguments
