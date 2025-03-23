@@ -55,10 +55,11 @@ if [ -z "$IS_INSTALLED" ]; then
 		pkg install nodejs
 		npm install -g $SERVER_NAME
 	fi
-
-	echo "${SERVER_NAME} is not installed. "
-	echo "Installing $SERVER_NAME..."
-	pkg install $SERVER_NAME
+	if [ -z "$IS_INSTALLED" ]; then
+		echo "${SERVER_NAME} is not installed. "
+		echo "Installing $SERVER_NAME..."
+		pkg install $SERVER_NAME
+	fi
 else
 	echo "$SERVER_NAME is already installed"
 fi
