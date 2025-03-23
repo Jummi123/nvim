@@ -3,9 +3,12 @@ It has quite comprehensive documentation. You can use that if you get stuck.
 
 Script that is used here also installs: which, make, python, lua, ninja, rustup (so we can isntall asm-lsp), nodejs (for bash-language-server), stylua, clang (includes clangd).
 # Using neovim in termux
-
+Update package list
+```
+pkg update && pkg upgrade -y
+```
 ### Install neovim
-get git first:)
+Get git first:)
 ```
 pkg install git
 ```
