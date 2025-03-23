@@ -71,7 +71,7 @@ if [ $SERVER_NAME = "clang" ]; then
 	SERVER_NAME=$"clangd"
 fi
 
-SERVER_PATH=$(swich "$SERVER_NAME")
+SERVER_PATH=$(which "$SERVER_NAME")
 
 if [ -z "$SERVER_PATH" ]; then
 echo "Didn't find path to ${SERVER_NAME}."
