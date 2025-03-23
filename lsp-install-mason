@@ -17,7 +17,7 @@ if which python; then
 else
 	pkg install python
 fi
-if which lua54; then
+if which lua; then
 	echo installed
 else
 	pkg install lua54
@@ -36,42 +36,40 @@ fi
 
 SERVER_NAME="$1"
 
-echo "Checking if ${SERVER_NAME} is installed..."
-if [ $SERVER_NAME = stylua ]; then
-	pkg install stylua
-fi
-if [ $SERVER_NAME = asm-lsp ]; then 
-	echo "Installing $SERVER_NAME from rust cargo"
-	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-	pkg install asm-lsp
-fi
 if [ $SERVER_NAME = "clangd" ]; then
 	SERVER_NAME=$"clang"
 fi
-
-if [ $SERVER_NAME = "lua-language-server" ]; then
-	echo "Installing $SERVER_NAME"
-	pkg install lua-language-server
-fi
-
-if [ $SERVER_NAME = "bash-language-server" ]; then
-	pkg install nodejs
-	npm install -g $SERVER_NAME
-fi
-
+	
 IS_INSTALLED=$(which "$SERVER_NAME")
 
 if [ -z "$IS_INSTALLED" ]; then
-	echo "${SERVER_NAME} is not installed. "
-	echo "Installing..."
-	pkg install $SERVER_NAME
+	
+	if [ $SERVER_NAME = asm-lsp ]; then 
+		echo "Installing $SERVER_NAME from rust cargo..."
+		curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+		pkg install $SERVER_NAME -y
+	fi
+
+	if [ $SERVER_NAME = "bash-language-server" ]; then
+		echo "Installing $SERVER_NAME..."
+		pkg install nodejs
+		npm install -g $SERVER_NAME
+	fi
+
+	IS_INSTALLED=$(which "$SERVER_NAME")
+
+	if [ -z "$IS_INSTALLED" ]; then
+		echo "${SERVER_NAME} is not installed. "
+		echo "Installing $SERVER_NAME..."
+		pkg install $SERVER_NAME
+	fi
+else
+	echo "$SERVER_NAME is already installed"
 fi
 
 if [ $SERVER_NAME = "clang" ]; then
 	SERVER_NAME=$"clangd"
 fi
-
-echo "$SERVER_NAME is installed"
 
 SERVER_PATH=$(which "$SERVER_NAME")
 
@@ -83,6 +81,14 @@ fi
 echo "$SERVER_NAME path: $SERVER_PATH"
 
 MASON_PATH="$HOME/.local/share/nvim/mason/packages/"$SERVER_NAME"/libexec"
+
+LINK_PATH="$MASON_PATH/$SERVER_NAME"
+
+if [ -L "$LINK_PATH" ]; then
+	echo "symbolic link already exist"
+	exit 1
+fi
+
 if mkdir -p "$MASON_PATH"; then
 	echo "SUCCESS: Path to mason packages $MASON_PATH"
 else
