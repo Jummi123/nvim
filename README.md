@@ -48,3 +48,5 @@ chmod +x plsp-install-mason
 ./pkg-install-mason clangd
 ```
 
+Idea for this script came from https://github.com/Amirulmuuminin/setup-mason-for-termux
+
