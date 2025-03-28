@@ -34,6 +34,12 @@ else
 	pkg install termux-api
 fi
 
+if which python3.12; then
+	echo "installed"
+else
+	pkg install python3.12-venv
+fi
+
 # Check for arguments
 if [ -z "$1"  ]; then 
 	echo "No server specified. Please enter server name. e.g. pkg-mason-install clangd"
