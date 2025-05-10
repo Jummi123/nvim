@@ -41,7 +41,7 @@ wget https://raw.githubusercontent.com/Jummi123/nvim/refs/heads/master/pkg-insta
 
 ### Make executable
 ```
-chmod +x plsp-install-mason
+chmod +x lsp-install-mason
 ```
 ### Install Clangd for example
 ```
