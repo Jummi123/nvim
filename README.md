@@ -49,4 +49,4 @@ chmod +x lsp-install-mason
 ```
 
 Idea for this script came from https://github.com/Amirulmuuminin/setup-mason-for-termux
-
+:)
